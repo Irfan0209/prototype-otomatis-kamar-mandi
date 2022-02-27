@@ -13,6 +13,7 @@ unsigned long simpan3 = 0;
 #define ledPin 13 //relay
 #define ledPin1 12 //lamp state
 #define button1 2 //button 
+#define TimeBack 122
 
 bool status1 = false;
 bool status2 = false;
@@ -70,7 +71,7 @@ void loop() {
   if (returnValue == 0) {
     runningTime(1);
 
-    while (tmr >= 6) {
+    while (tmr >= TimeBack) {
       ledState = LOW;
       digitalWrite(ledPin1, ledState);
       flag = 0;
